@@ -1,0 +1,19 @@
+{
+  "name": "learn-react",
+  "version": "1.0.0",
+  "description": "Learn react with https://frontendmasters.com/courses/complete-react-v6/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daviddarx/learn-react.git"
+  },
+  "author": "David Darx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daviddarx/learn-react/issues"
+  },
+  "homepage": "https://github.com/daviddarx/learn-react#readme"
+}
