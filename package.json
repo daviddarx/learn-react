@@ -1,22 +1,25 @@
 {
-  "name": "learn-react",
-  "version": "1.0.0",
-  "description": "Learn react with https://frontendmasters.com/courses/complete-react-v6/",
-  "main": "index.js",
-  "scripts": {
-    "format": "prettier --write \"src/**/*.{js,jsx}\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daviddarx/learn-react.git"
-  },
-  "author": "David Darx",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/daviddarx/learn-react/issues"
-  },
-  "homepage": "https://github.com/daviddarx/learn-react#readme",
-  "devDependencies": {
-    "prettier": "^2.5.1"
-  }
+    "name": "learn-react",
+    "version": "1.0.0",
+    "description": "Learn react with https://frontendmasters.com/courses/complete-react-v6/",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --write \"src/**/*.{js,jsx}\"",
+        "lint": "eslint \"src/**/*.{js,jsx}\"  --quiet"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/daviddarx/learn-react.git"
+    },
+    "author": "David Darx",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/daviddarx/learn-react/issues"
+    },
+    "homepage": "https://github.com/daviddarx/learn-react#readme",
+    "devDependencies": {
+        "eslint": "^7.18.0",
+        "eslint-config-prettier": "^8.1.0",
+        "prettier": "^2.5.1"
+    }
 }
