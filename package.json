@@ -4,7 +4,9 @@
     "description": "Learn react with https://frontendmasters.com/courses/complete-react-v6/",
     "main": "index.js",
     "scripts": {
-        "dev": "parcel src/index.html",
+        "start": "parcel ./src/index.html",
+        "build": "parcel build ./src/index.html",
+        "clean": "rm -rf .cache/ && rm -rf dist/",
         "format": "prettier --write \"src/**/*.{js,jsx}\"",
         "lint": "eslint \"src/**/*.{js,jsx}\"  --quiet"
     },
