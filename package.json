@@ -21,6 +21,8 @@
     },
     "homepage": "https://github.com/daviddarx/learn-react#readme",
     "devDependencies": {
+        "@babel/core": "7.12.16",
+        "@babel/preset-react": "7.12.13",
         "eslint": "7.18.0",
         "eslint-config-prettier": "8.1.0",
         "parcel": "1.12.3",
