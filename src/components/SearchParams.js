@@ -15,6 +15,11 @@ const SearchParams = () => {
         requestPets();
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+    useEffect(() => {
+        console.log("reset Bread");
+        setBreed("");
+    }, [animal]);
+
     async function requestAnimals() {
         const response = await fetch("https://pets-v2.dev-apis.com/animals");
 
@@ -24,6 +29,7 @@ const SearchParams = () => {
     }
 
     async function requestPets() {
+        console.log(animal + " / " + city + " / " + breed);
         const response = await fetch(
             `http://pets-v2.dev-apis.com/pets?animal=${animal}&city=${city}&breed=${breed}`
         );
