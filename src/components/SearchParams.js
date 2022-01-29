@@ -29,7 +29,6 @@ const SearchParams = () => {
     }
 
     async function requestPets() {
-        console.log(animal + " / " + city + " / " + breed);
         const response = await fetch(
             `http://pets-v2.dev-apis.com/pets?animal=${animal}&city=${city}&breed=${breed}`
         );
