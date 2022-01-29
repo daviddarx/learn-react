@@ -1,9 +1,9 @@
-const Pet = (props) => {
+const Pet = ({ name, animal, breed }) => {
     return (
         <div>
-            <h2>{props.name}</h2>
-            <h3>{props.animal}</h3>
-            <h3>{props.breed}</h3>
+            <h2>{name}</h2>
+            <h3>{animal}</h3>
+            <h3>{breed}</h3>
         </div>
     );
 };
