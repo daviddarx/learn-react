@@ -4,7 +4,7 @@ import Pet from "./Pet";
 
 const SearchParams = () => {
     const [animals, setAnimals] = useState([]);
-    const [location, setLocation] = useState("");
+    const [city, setCity] = useState("");
     const [animal, setAnimal] = useState("");
     const [breed, setBreed] = useState("");
     const [pets, setPets] = useState([]);
@@ -25,7 +25,7 @@ const SearchParams = () => {
 
     async function requestPets() {
         const response = await fetch(
-            `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+            `http://pets-v2.dev-apis.com/pets?animal=${animal}&city=${city}&breed=${breed}`
         );
 
         const json = await response.json();
@@ -41,13 +41,13 @@ const SearchParams = () => {
                     requestPets();
                 }}
             >
-                <label htmlFor="location">
-                    Location
+                <label htmlFor="city">
+                    City
                     <input
-                        id="location"
-                        value={location}
-                        onChange={(e) => setLocation(e.target.value)}
-                        placeholder="Location"
+                        id="city"
+                        value={city}
+                        onChange={(e) => setCity(e.target.value)}
+                        placeholder="City"
                     />
                 </label>
 
