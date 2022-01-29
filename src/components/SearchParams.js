@@ -2,9 +2,8 @@ import { useState, useEffect } from "react";
 import useBreedList from "../hooks/useBreedList";
 import Pet from "./Pet";
 
-const ANIMALS = ["dog", "rabbit", "bird", "reptile"];
-
 const SearchParams = () => {
+    const [animals, setAnimals] = useState([]);
     const [location, setLocation] = useState("");
     const [animal, setAnimal] = useState("");
     const [breed, setBreed] = useState("");
@@ -12,18 +11,29 @@ const SearchParams = () => {
     const [breeds] = useBreedList(animal);
 
     useEffect(() => {
+        requestAnimals();
         requestPets();
+
+        async function requestAnimals() {
+            const response = await fetch(
+                "https://pets-v2.dev-apis.com/animals"
+            );
+
+            const json = await response.json();
+
+            setAnimals(json.animals);
+        }
+
+        async function requestPets() {
+            const response = await fetch(
+                `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+            );
+
+            const json = await response.json();
+
+            setPets(json.pets);
+        }
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
-
-    async function requestPets() {
-        const response = await fetch(
-            `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
-        );
-
-        const json = await response.json();
-
-        setPets(json.pets);
-    }
 
     return (
         <div className="search-params">
@@ -49,7 +59,7 @@ const SearchParams = () => {
                     >
                         <option>Please select an animal</option>
 
-                        {ANIMALS.map((animal) => (
+                        {animals.map((animal) => (
                             <option value={animal} key={animal}>
                                 {animal}
                             </option>
