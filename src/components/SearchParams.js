@@ -16,7 +16,6 @@ const SearchParams = () => {
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
     useEffect(() => {
-        console.log("reset Bread");
         setBreed("");
     }, [animal]);
 
