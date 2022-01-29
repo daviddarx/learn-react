@@ -3,10 +3,6 @@ import { useState } from "react";
 const SearchParams = () => {
     const [location, setLocation] = useState("Zürich ZH");
 
-    const updateLocation = (e) => {
-        setLocation(e.target.value);
-    };
-
     return (
         <div className="search-params">
             <form>
@@ -14,7 +10,7 @@ const SearchParams = () => {
                     Location
                     <input
                         id="location"
-                        onChange={updateLocation}
+                        onChange={(e) => setLocation(e.target.value)}
                         value={location}
                         placeholder="Location"
                     />
