@@ -13,31 +13,34 @@ const SearchParams = () => {
     useEffect(() => {
         requestAnimals();
         requestPets();
-
-        async function requestAnimals() {
-            const response = await fetch(
-                "https://pets-v2.dev-apis.com/animals"
-            );
-
-            const json = await response.json();
-
-            setAnimals(json.animals);
-        }
-
-        async function requestPets() {
-            const response = await fetch(
-                `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
-            );
-
-            const json = await response.json();
-
-            setPets(json.pets);
-        }
     }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+    async function requestAnimals() {
+        const response = await fetch("https://pets-v2.dev-apis.com/animals");
+
+        const json = await response.json();
+
+        setAnimals(json.animals);
+    }
+
+    async function requestPets() {
+        const response = await fetch(
+            `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+        );
+
+        const json = await response.json();
+
+        setPets(json.pets);
+    }
 
     return (
         <div className="search-params">
-            <form>
+            <form
+                onSubmit={(e) => {
+                    e.preventDefault();
+                    requestPets();
+                }}
+            >
                 <label htmlFor="location">
                     Location
                     <input
