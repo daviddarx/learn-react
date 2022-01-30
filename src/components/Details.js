@@ -2,11 +2,18 @@ import { Component } from "react";
 import { withRouter } from "react-router-dom";
 
 class Details extends Component {
-    constructor() {
-        super();
+    state = { loading: true };
 
-        this.state = { loading: true };
-    }
+    // shortcut for the following, allowed through:
+
+    // @babel/eslint-parser
+    // @babel/plugin-proposal-class-properties
+    // @babel/preset-env
+
+    // constructor() {
+    //     super();
+    //     this.state = { loading: true };
+    // }
 
     async componentDidMount() {
         const response = await fetch(
