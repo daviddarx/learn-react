@@ -26,8 +26,22 @@ class Details extends Component {
     }
 
     render() {
-        console.log(this.state);
-        return <h2>test</h2>;
+        const { animal, breed, city, state, description, name } = this.state;
+        return (
+            <div className="details">
+                <div>
+                    <h1>{name}</h1>
+
+                    <h2>
+                        {animal} - {breed} - {city}, {state}
+                    </h2>
+
+                    <p>{description}</p>
+
+                    <button>Adopt {name}</button>
+                </div>
+            </div>
+        );
     }
 }
 
