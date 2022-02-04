@@ -7,7 +7,8 @@ class Carousel extends Component {
     };
 
     static defaultProps = {
-        images: ["http://pets-images.dev-apis.com/pets/none.jpg"]
+        // automatically default props, if something is missing in props
+        images: ["http://pets-images.dev-apis.com/pets/none.jpg"] // = props.images if not delivered from the parent
     };
 
     async componentDidMount() {}
