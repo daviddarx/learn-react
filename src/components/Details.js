@@ -2,6 +2,7 @@ import { Component } from "react";
 import { withRouter } from "react-router-dom";
 import Carousel from "./Carousel";
 import ErrorBoundary from "./ErrorBoundary";
+import ThemeContext from "./ThemeContext";
 
 // class component
 class Details extends Component {
@@ -59,7 +60,15 @@ class Details extends Component {
 
                     <p>{description}</p>
 
-                    <button>Adopt {name}</button>
+                    <ThemeContext.Consumer>
+                        {(
+                            theme // theme is an hook (array)
+                        ) => (
+                            <button style={{ backgroundColor: theme[0] }}>
+                                Adopt {name}
+                            </button>
+                        )}
+                    </ThemeContext.Consumer>
                 </div>
             </div>
         );
