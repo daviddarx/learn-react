@@ -38,6 +38,7 @@ class Details extends Component {
         }
 
         const { animal, breed, city, state, description, name } = this.state;
+
         return (
             <div className="details">
                 <div>
