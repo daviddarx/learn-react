@@ -44,6 +44,8 @@ class Details extends Component {
         const { animal, breed, city, state, description, name, images } =
             this.state;
 
+        // throw new Error("this is an error"); // example to demonstrate ErrorBoundary
+
         return (
             <div className="details">
                 <div>
