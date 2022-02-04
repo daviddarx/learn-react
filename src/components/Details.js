@@ -20,7 +20,7 @@ class Details extends Component {
 
     async componentDidMount() {
         const response = await fetch(
-            `http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}` // //match.params = syntax to get the ID from the route (withRouter)
+            `http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}` // match.params = syntax to get the ID from the route (withRouter)
         );
 
         const json = await response.json();
