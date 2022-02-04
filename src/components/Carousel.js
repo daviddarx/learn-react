@@ -11,7 +11,12 @@ class Carousel extends Component {
         images: ["http://pets-images.dev-apis.com/pets/none.jpg"] // = props.images if not delivered from the parent
     };
 
-    async componentDidMount() {}
+    //arrow function to be able to access this
+    thumbnailClick = (event) => {
+        this.setState({
+            activeID: +event.target.dataset.index // + to transform string in number
+        });
+    };
 
     render() {
         const { activeID } = this.state;
@@ -19,14 +24,18 @@ class Carousel extends Component {
 
         return (
             <div className="carousel">
-                <img src={images[activeID]} alt="" />
+                <img src={images[activeID]} alt="animal" />
 
                 <div className="carousel-smaller">
                     {images.map((img, index) => (
+                        // quick example, deactive eslint warning about click on non interactive element
+                        // eslint-disable-next-line
                         <img
                             key={img}
                             src={img}
                             className={index === activeID ? "active" : ""}
+                            data-index={index}
+                            onClick={this.thumbnailClick}
                             alt="animal thumbnail"
                         />
                     ))}
