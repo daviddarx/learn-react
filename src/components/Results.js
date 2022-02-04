@@ -1,5 +1,6 @@
 import Pet from "./Pet";
 
+// fonction component
 const Results = ({ pets }) => {
     return (
         <div className="search">

@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import useBreedList from "../hooks/useBreedList";
 import Results from "./Results";
 
+// fonction component
 const SearchParams = () => {
-    const [animals, setAnimals] = useState([]);
+    const [animals, setAnimals] = useState([]); // useState = hooks, replaceable with states in class componenets (see Details.js)
     const [city, setCity] = useState("");
     const [animal, setAnimal] = useState("");
     const [breed, setBreed] = useState("");
@@ -17,7 +18,7 @@ const SearchParams = () => {
 
     useEffect(() => {
         setBreed("");
-    }, [animal]);
+    }, [animal]); // hook, called each time that animal get updated
 
     async function requestAnimals() {
         const response = await fetch("https://pets-v2.dev-apis.com/animals");

@@ -1,7 +1,9 @@
 import { Component } from "react";
 import { withRouter } from "react-router-dom";
 
+// class component
 class Details extends Component {
+    //class property, replaces the hooks in class componenets
     state = { loading: true };
 
     // shortcut for the following, allowed through:
@@ -17,7 +19,7 @@ class Details extends Component {
 
     async componentDidMount() {
         const response = await fetch(
-            `http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}`
+            `http://pets-v2.dev-apis.com/pets?id=${this.props.match.params.id}` // //match.params = syntax to get the ID from the route (withRouter)
         );
 
         const json = await response.json();

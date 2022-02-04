@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 const localCache = {};
 
+// custom hooks, analog to vue.js mixins
 export default function useBreedList(animal) {
     const [breedList, setBreedList] = useState([]);
     const [status, setStatus] = useState("unloaded");
